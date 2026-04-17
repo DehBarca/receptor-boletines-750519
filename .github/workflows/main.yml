@@ -221,7 +221,6 @@ jobs:
           docker run -d \
             --name receptor-app \
             --restart unless-stopped \
-            -p 5000:5000 \
             -e LOG_LEVEL=${LOG_LEVEL} \
             $IMAGE_URI
           
@@ -337,4 +336,5 @@ jobs:
           echo "Image: ${{ steps.image-uri.outputs.uri }}"
           echo "EC2 Host: ${{ secrets.EC2_HOST }}"
           echo "Environment: Production"
+          echo "Note: Application is running without exposed ports"
           echo "========================================="
